@@ -1,10 +1,6 @@
-<%-- 
-    Document   : helloWorldForm
-    Created on : Sep 23, 2020, 11:51:42 AM
-    Author     : 820203
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix ="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,6 +14,9 @@
             Last name: <input type="text" name="lastname" value="${lastname}"><br>
             <input type="submit" value="Submit">
         </form>
-            <p>${message}</p>
+            
+        <c:if test="${invalid == true}">
+            <p>Invalid entry. Please enter both your first and last names. </p>
+        </c:if>
     </body>
 </html>
